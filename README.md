@@ -41,3 +41,6 @@ class SomeClass
      }
 }
 ```
+
+## Supported actions
+- Resize
