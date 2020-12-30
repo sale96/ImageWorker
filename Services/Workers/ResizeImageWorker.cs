@@ -53,7 +53,7 @@ namespace ImageWorker.Services.Workers
         /// <param name="height"></param>
         /// <param name="directory"></param>
         /// <returns>string path</returns>
-        public async Task<string> Save(IFormFile file, int width, int height, string directory)
+        public async Task<string> SaveAndModifyAsync(IFormFile file, int width, int height, string directory)
         {
             string extension = "";
             if (!file.ValidateExtension(ref extension))

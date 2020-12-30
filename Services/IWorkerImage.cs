@@ -5,6 +5,6 @@ namespace ImageWorker.Services
 {
     public interface IWorkerImage
     {
-        Task<string> Save(IFormFile file, int width, int height, string dir);
+        Task<string> SaveAndModifyAsync(IFormFile file, int width, int height, string dir);
     }
 }

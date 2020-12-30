@@ -18,7 +18,7 @@ var service = factory.GetWorker(WorkerType.Resize);
 
 #### Now you can use resize service like:
 ```cs
-string path = await service.Save(formFile, width, height, dir);
+string path = await service.SaveAndModifyAsync(formFile, width, height, dir);
 ```
 - This returns the path to the file in case you want to store it to database.
 
