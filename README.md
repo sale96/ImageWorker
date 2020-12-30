@@ -53,7 +53,7 @@ InvalidDimensionsException
 ```cs
 InvalidExtensionTypeException
 ``` 
-- provided that you placed an image that is not supported (anything that is not jpg, jpeg, png is not supported for now)
+- provided that you placed an image that is not supported (anything other than jpg, jpeg, png is not supported for now)
 
 ## Supported actions
 - Resize
