@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ImageWorker.Extensions;
+using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ImageWorker.Services.Workers
@@ -15,16 +13,6 @@ namespace ImageWorker.Services.Workers
     public class ResizeImageWorker : IImageWorker
     {
         #region Private methods
-        private bool ValidateExtension(IFormFile file, ref string extension)
-        {
-            var allowedExtensions = new List<string> { ".jpg", ".jpeg", ".png" };
-
-            extension = Path.GetExtension(file.FileName);
-
-            string typ = extension;
-
-            return allowedExtensions.Any(x => x == typ);
-        }
 
         private async Task<Image> GenerateImageResize(IFormFile file, int width, int height)
         {
@@ -70,7 +58,7 @@ namespace ImageWorker.Services.Workers
         public async Task<string> Save(IFormFile file, int width, int height, string directory)
         {
             string extension = "";
-            if (!ValidateExtension(file, ref extension))
+            if (!file.ValidateExtension(ref extension))
                 throw new Exception("Image extension is not valid!");
 
             var image = await GenerateImageResize(file, width, height);
