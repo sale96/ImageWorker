@@ -7,7 +7,7 @@ namespace ImageWorker
     /// <summary>
     /// Provides the way to GetWorker from WorkerType enum
     /// </summary>
-    public class WorkerFactory : IWorkerImageFactory
+    public class FactoryImage : IFactoryImage
     {
         /// <summary>
         /// Returns the worker defined by WorkerType enum
