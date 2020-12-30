@@ -59,6 +59,9 @@ namespace ImageWorker.Services.Workers
             if (!file.ValidateExtension(ref extension))
                 throw new InvalidExtensionTypeException(extension);
 
+            if (!ValidationHelper.ValidateDimensions(width, height))
+                throw new InvalidDimensionsException(width, height);
+
             var image = await GenerateImageResize(file, width, height);
             var path  = StringHelper.GenerateNamedPath(extension, directory);
 
