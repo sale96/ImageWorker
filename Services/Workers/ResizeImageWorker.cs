@@ -35,10 +35,7 @@ namespace ImageWorker.Services.Workers
 
             using (var graphic = Graphics.FromImage(res))
             {
-                graphic.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                graphic.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-                graphic.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-                graphic.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                graphic.CreateGraphicsModes();
                 graphic.DrawImage(image, 0, 0, width, height);
             }
 
