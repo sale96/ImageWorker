@@ -12,7 +12,7 @@ namespace ImageWorker.Services.Workers
     /// <summary>
     /// Resize image worker: use it to resize images
     /// </summary>
-    public class ResizeImageWorker : IImageWorker
+    public class ResizeImageWorker : IWorkerImage
     {
         #region Private methods
         private async Task<Image> GenerateImageResize(IFormFile file, int width, int height)

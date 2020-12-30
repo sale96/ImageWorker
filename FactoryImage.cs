@@ -14,9 +14,9 @@ namespace ImageWorker
         /// </summary>
         /// <param name="workerType"></param>
         /// <returns>IImageWorker worker</returns>
-        public IImageWorker GetWorker(WorkerType workerType)
+        public IWorkerImage GetWorker(WorkerType workerType)
         {
-            IImageWorker worker = null;
+            IWorkerImage worker = null;
             switch (workerType)
             {
                 case WorkerType.RezizeWorker:

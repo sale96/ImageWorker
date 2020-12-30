@@ -4,17 +4,17 @@ Provides the way to resize images and save them to defined directory with new Gu
 
 ## How to use
 
-#### Create an instance of WorkerFactory like:
+#### Create an instance of FactoryImage like:
 
 ```cs
-WorkerFactory factory = new WorkerFactory();
+FactoryImage factory = new FactoryImage();
 ```
 
 #### From there you can get desired service:
 ```cs
 var service = factory.GetWorker(WorkerType.Resize);
 ```
-- This one will crate ResizeImageWorker that derives from ```IImageWorker``` interface.
+- This one will crate ResizeImageWorker that derives from ```IWorkerImage``` interface.
 
 #### Now you can use resize service like:
 ```cs
@@ -26,16 +26,16 @@ string path = await service.Save(formFile, width, height, dir);
 
 #### You can register factory to ```ConfigureServices``` in Startup.cs like:
 ```cs
-services.RegisterImageWorker();
+services.RegisterImageFactory();
 ```
 
-#### And then instead of using ```WorkerFactory``` directly you can use interface implementation like
+#### And then instead of using ```FactoryImage``` directly you can use interface implementation like
 ```cs
 class SomeClass
 {
-     private readonly IWorkerImageFactory _factory;
+     private readonly IFactoryImage _factory;
 
-     public SomeClass(IWorkerImageFactory factory)
+     public SomeClass(IFactoryImage factory)
      {
           _factory = factory;
      }
