@@ -1,4 +1,5 @@
-﻿using ImageWorker.Extensions;
+﻿using ImageWorker.Exceptions;
+using ImageWorker.Extensions;
 using ImageWorker.Helpers;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -56,7 +57,7 @@ namespace ImageWorker.Services.Workers
         {
             string extension = "";
             if (!file.ValidateExtension(ref extension))
-                throw new Exception("Image extension is not valid!");
+                throw new InvalidExtensionTypeException(extension);
 
             var image = await GenerateImageResize(file, width, height);
             var path  = StringHelper.GenerateNamedPath(extension, directory);
