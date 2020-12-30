@@ -1,5 +1,6 @@
 ﻿using ImageWorker.Services;
 using ImageWorker.Services.Enums;
+using ImageWorker.Services.Interfaces;
 
 namespace ImageWorker
 {
@@ -13,6 +14,6 @@ namespace ImageWorker
         /// </summary>
         /// <param name="workerType"></param>
         /// <returns>IImageWorker worker</returns>
-        IWorkerImage GetWorker(WorkerType workerType);
+        IWorkerImage GetWorker(WorkerType workerType, IPassPointData data = null);
     }
 }

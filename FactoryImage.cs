@@ -1,5 +1,7 @@
-﻿using ImageWorker.Services;
+﻿using ImageWorker.Exceptions;
+using ImageWorker.Services;
 using ImageWorker.Services.Enums;
+using ImageWorker.Services.Interfaces;
 using ImageWorker.Services.Workers;
 
 namespace ImageWorker
@@ -14,13 +16,18 @@ namespace ImageWorker
         /// </summary>
         /// <param name="workerType"></param>
         /// <returns>IImageWorker worker</returns>
-        public IWorkerImage GetWorker(WorkerType workerType)
+        public IWorkerImage GetWorker(WorkerType workerType, IPassPointData data = null)
         {
             IWorkerImage worker = null;
             switch (workerType)
             {
                 case WorkerType.Resize:
                     worker = new ResizeImageWorker();
+                    break;
+                case WorkerType.Crop:
+                    if (data == null)
+                        throw new NotPassedPointException();
+                    worker = new CropImageWorker(data);
                     break;
             }
 
