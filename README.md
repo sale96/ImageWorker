@@ -21,3 +21,23 @@ var service = factory.GetWorker(WorkerType.Resize);
 string path = await service.Save(formFile, width, height, dir);
 ```
 - This returns the path to the file in case you want to store it to database.
+
+## ASP.NET Core
+
+#### You can register factory to ```ConfigureServices``` in Startup.cs like:
+```cs
+services.RegisterImageWorker();
+```
+
+#### And then instead of using ```WorkerFactory``` directly you can use interface implementation like
+```cs
+class SomeClass
+{
+     private readonly IWorkerImageFactory _factory;
+
+     public SomeClass(IWorkerImageFactory factory)
+     {
+          _factory = factory;
+     }
+}
+```
