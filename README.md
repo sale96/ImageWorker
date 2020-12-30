@@ -46,11 +46,11 @@ class SomeClass
 
 #### Exceptions you can expect are:
 - 
-```
+```cs
 InvalidDimensionsException
 ```
 - Provided that you placed width and height of an image to 0 or less
-```
+```cs
 InvalidExtensionTypeException
 ``` 
 - provided that you placed an image that is not supported (anything that is not jpg, jpeg, png is not supported for now)
