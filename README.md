@@ -43,7 +43,8 @@ class SomeClass
 ```
 
 ## Exceptions
-Exceptions you can expect are:
+
+#### Exceptions you can expect are:
 - 
 ```
 InvalidDimensionsException
