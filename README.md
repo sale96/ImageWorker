@@ -42,5 +42,17 @@ class SomeClass
 }
 ```
 
+## Exceptions
+Exceptions you can expect are:
+- 
+```
+InvalidDimensionsException
+```
+- Provided that you placed width and height of an image to 0 or less
+```
+InvalidExtensionTypeException
+``` 
+- provided that you placed an image that is not supported (anything that is not jpg, jpeg, png is not supported for now)
+
 ## Supported actions
 - Resize
