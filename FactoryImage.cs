@@ -19,7 +19,7 @@ namespace ImageWorker
             IWorkerImage worker = null;
             switch (workerType)
             {
-                case WorkerType.RezizeWorker:
+                case WorkerType.Resize:
                     worker = new ResizeImageWorker();
                     break;
             }
