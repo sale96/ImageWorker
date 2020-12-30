@@ -8,9 +8,9 @@ namespace ImageWorker.Extensions
     /// </summary>
     public static class ImageWorkerCore
     {
-        public static IServiceCollection RegisterImageWorker(this IServiceCollection services)
+        public static IServiceCollection RegisterImageFactory(this IServiceCollection services)
         {
-            services.AddTransient<IWorkerImageFactory, WorkerFactory>();
+            services.AddTransient<IFactoryImage, FactoryImage>();
             return services;
         }
     }
