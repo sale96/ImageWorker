@@ -15,6 +15,7 @@ namespace ImageWorker
         /// Returns the worker defined by WorkerType enum
         /// </summary>
         /// <param name="workerType"></param>
+        /// <param name="data"></param>
         /// <returns>IImageWorker worker</returns>
         public IWorkerImage GetWorker(WorkerType workerType, IPassPointData data = null)
         {
