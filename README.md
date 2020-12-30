@@ -45,7 +45,7 @@ class SomeClass
 ## Exceptions
 
 #### Exceptions you can expect are:
-- 
+
 ```cs
 InvalidDimensionsException
 ```
