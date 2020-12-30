@@ -5,6 +5,7 @@
     /// </summary>
     public enum WorkerType
     {
-        Resize
+        Resize,
+        Crop
     }
 }
