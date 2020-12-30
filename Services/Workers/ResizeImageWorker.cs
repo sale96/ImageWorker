@@ -1,4 +1,5 @@
 ﻿using ImageWorker.Extensions;
+using ImageWorker.Helpers;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Drawing;
@@ -13,7 +14,6 @@ namespace ImageWorker.Services.Workers
     public class ResizeImageWorker : IImageWorker
     {
         #region Private methods
-
         private async Task<Image> GenerateImageResize(IFormFile file, int width, int height)
         {
             Image newImage = null;
@@ -62,10 +62,7 @@ namespace ImageWorker.Services.Workers
                 throw new Exception("Image extension is not valid!");
 
             var image = await GenerateImageResize(file, width, height);
-
-            var name = Guid.NewGuid().ToString() + extension;
-
-            var path = Path.Combine(directory, name);
+            var path  = StringHelper.GenerateNamedPath(extension, directory);
 
             image.Save(path);
 
