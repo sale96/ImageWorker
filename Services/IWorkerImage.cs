@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace ImageWorker.Services
 {
-    public interface IImageWorker
+    public interface IWorkerImage
     {
         Task<string> Save(IFormFile file, int width, int height, string dir);
     }
